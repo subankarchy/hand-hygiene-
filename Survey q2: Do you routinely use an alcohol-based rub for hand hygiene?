@@ -1,0 +1,30 @@
+# Survey q2: Do you routinely use an alcohol-based rub for hand hygiene?
+
+import matplotlib.pyplot as plt
+
+# Data
+roles = ['PGY-1', 'PGY-2', 'PGY-3']
+yes_values = [13, 12, 10]
+no_values = [1, 1, 0]
+
+# Custom colors for Yes and No bars
+yes_color = 'blue'
+no_color = 'orange'
+
+# Create figure and axis
+fig, ax = plt.subplots()
+
+# Plotting Yes bars with reduced width
+ax.bar(roles, yes_values, color=yes_color, label='Yes', width=0.4)
+
+# Plotting No bars on top of Yes bars with reduced width
+ax.bar(roles, no_values, bottom=yes_values, color=no_color, label='No', width=0.4)
+
+# Adding labels and title
+ax.set_ylabel('Number of Individuals')
+ax.set_xlabel('Roles')
+ax.set_title('Hand Hygiene Responses by Role')
+ax.legend()
+
+# Display the plot
+plt.show()
